@@ -1,22 +1,27 @@
 import UIKit
 
+enum Accessory {
+    case chevron
+    case uiswitch
+}
 
 struct Setting {
     var iconImage: UIImage?
     var text: String
     var backgroundColor: UIColor
     var tintColor: UIColor = .white
+    var accessory: Accessory = .chevron
 }
 
 extension Setting {
     static var settings: [[Setting]] = [
         [
-            Setting(iconImage: UIImage(systemName: "airplane"), text: "Авиарежим", backgroundColor: .systemOrange),
+            Setting(iconImage: UIImage(systemName: "airplane"), text: "Авиарежим", backgroundColor: .systemOrange, accessory: .uiswitch),
             Setting(iconImage: UIImage(systemName: "wifi"), text: "WLAN", backgroundColor: .systemBlue),
             Setting(iconImage: UIImage(named: "bluetooth"), text: "Bluetooth", backgroundColor: .systemBlue),
             Setting(iconImage: UIImage(systemName: "antenna.radiowaves.left.and.right"), text: "Сотовая связь", backgroundColor: .systemGreen),
             Setting(iconImage: UIImage(systemName: "personalhotspot"), text: "Режим модема", backgroundColor: .systemGreen),
-            Setting(iconImage: UIImage(systemName: "personalhotspot"), text: "VPN", backgroundColor: .systemBlue)
+            Setting(iconImage: UIImage(systemName: "personalhotspot"), text: "VPN", backgroundColor: .systemBlue, accessory: .uiswitch)
         ],
         [
             Setting(iconImage: UIImage(systemName: "bell"), text: "Уведомления", backgroundColor: .systemRed),

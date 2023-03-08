@@ -79,4 +79,11 @@ final class CustomTableViewCell: UITableViewCell {
     }
     
     // MARK: - Reuse
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryType = .none
+        self.accessoryView = .none
+        self.setting = nil
+    }
 }

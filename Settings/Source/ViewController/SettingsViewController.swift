@@ -60,8 +60,19 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else { fatalError("cell not found") }
-        cell.setting = settings?[indexPath.section][indexPath.row]
+        let setting = settings?[indexPath.section][indexPath.row]
+        let accessory = setting?.accessory
+        cell.setting = setting
+        switch accessory {
+            case .chevron:
+                cell.accessoryType = .disclosureIndicator
+            case .uiswitch:
+                cell.accessoryView = UISwitch()
+            default:
+                cell.accessoryType = .none
+        }
         return cell
     }
+    
 }
 
