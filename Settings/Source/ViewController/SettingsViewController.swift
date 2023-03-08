@@ -2,6 +2,10 @@ import UIKit
 import SnapKit
 
 final class SettingsViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private var settings: [[Setting]]?
 
     // MARK: - Outlets
     
@@ -28,6 +32,7 @@ final class SettingsViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .systemBackground
         title = "Настройки"
+        settings = Setting.settings
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
