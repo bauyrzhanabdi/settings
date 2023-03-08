@@ -74,5 +74,11 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let setting = settings?[indexPath.section][indexPath.row]
+        let controller = DetailViewController()
+        controller.setting = setting
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
-
