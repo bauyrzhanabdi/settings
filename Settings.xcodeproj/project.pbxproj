@@ -14,6 +14,7 @@
 		B2E8A65D29B8967A004890B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E8A65B29B8967A004890B1 /* LaunchScreen.storyboard */; };
 		B2E8A66A29B89C38004890B1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2E8A66929B89C38004890B1 /* SnapKit */; };
 		B2E8A66C29B89DD1004890B1 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */; };
+		B2E8A67129B8A05F004890B1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8A67029B8A05F004890B1 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B2E8A65C29B8967A004890B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2E8A65E29B8967A004890B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
+		B2E8A67029B8A05F004890B1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E8A65429B89676004890B1 /* SettingsViewController.swift */,
+				B2E8A67229B8A064004890B1 /* TableViewCell */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -107,6 +110,14 @@
 				B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B2E8A67229B8A064004890B1 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B2E8A67029B8A05F004890B1 /* CustomTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E8A65529B89676004890B1 /* SettingsViewController.swift in Sources */,
+				B2E8A67129B8A05F004890B1 /* CustomTableViewCell.swift in Sources */,
 				B2E8A66C29B89DD1004890B1 /* NSObject+Ext.swift in Sources */,
 				B2E8A65129B89676004890B1 /* AppDelegate.swift in Sources */,
 				B2E8A65329B89676004890B1 /* SceneDelegate.swift in Sources */,
