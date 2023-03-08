@@ -12,6 +12,8 @@
 		B2E8A65529B89676004890B1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8A65429B89676004890B1 /* SettingsViewController.swift */; };
 		B2E8A65A29B8967A004890B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E8A65929B8967A004890B1 /* Assets.xcassets */; };
 		B2E8A65D29B8967A004890B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E8A65B29B8967A004890B1 /* LaunchScreen.storyboard */; };
+		B2E8A66A29B89C38004890B1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2E8A66929B89C38004890B1 /* SnapKit */; };
+		B2E8A66C29B89DD1004890B1 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		B2E8A65929B8967A004890B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2E8A65C29B8967A004890B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2E8A65E29B8967A004890B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E8A66A29B89C38004890B1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +96,17 @@
 			children = (
 				B2E8A66429B89753004890B1 /* App */,
 				B2E8A66529B89766004890B1 /* ViewController */,
+				B2E8A66D29B89DD4004890B1 /* Extension */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		B2E8A66D29B89DD4004890B1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B2E8A66B29B89DD1004890B1 /* NSObject+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,9 @@
 			dependencies = (
 			);
 			name = Settings;
+			packageProductDependencies = (
+				B2E8A66929B89C38004890B1 /* SnapKit */,
+			);
 			productName = Settings;
 			productReference = B2E8A64D29B89675004890B1 /* Settings.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +156,9 @@
 				Base,
 			);
 			mainGroup = B2E8A64429B89675004890B1;
+			packageReferences = (
+				B2E8A66829B89C38004890B1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B2E8A64E29B89675004890B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E8A65529B89676004890B1 /* SettingsViewController.swift in Sources */,
+				B2E8A66C29B89DD1004890B1 /* NSObject+Ext.swift in Sources */,
 				B2E8A65129B89676004890B1 /* AppDelegate.swift in Sources */,
 				B2E8A65329B89676004890B1 /* SceneDelegate.swift in Sources */,
 			);
@@ -376,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2E8A66829B89C38004890B1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2E8A66929B89C38004890B1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2E8A66829B89C38004890B1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2E8A64529B89675004890B1 /* Project object */;
 }
