@@ -4,7 +4,14 @@ import SnapKit
 final class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    
+    var setting: Setting? {
+        didSet {
+            iconView.image = setting?.iconImage
+            iconView.tintColor = setting?.tintColor
+            label.text = setting?.text
+            containerView.backgroundColor = setting?.backgroundColor
+        }
+    }
     
     // MARK: - Outlets
     private lazy var containerView: UIView = {

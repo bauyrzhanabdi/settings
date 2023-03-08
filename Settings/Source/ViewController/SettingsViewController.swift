@@ -49,18 +49,19 @@ final class SettingsViewController: UIViewController {
 
 // MARK: - Extension
 
-extension SettingsViewController: UITableViewDataSource {
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        settings?[section].count ?? 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        settings?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else { fatalError("cell not found") }
+        cell.setting = settings?[indexPath.section][indexPath.row]
         return cell
     }
-}
-
-extension SettingsViewController: UITableViewDelegate {
-    
 }
 
