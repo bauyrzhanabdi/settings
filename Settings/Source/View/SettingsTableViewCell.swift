@@ -1,0 +1,86 @@
+import UIKit
+import SnapKit
+
+final class SettingsTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    
+    var setting: Setting? {
+        didSet {
+            iconView.image = setting?.iconImage
+            iconView.tintColor = setting?.tintColor
+            label.text = setting?.text
+            containerView.backgroundColor = setting?.backgroundColor
+        }
+    }
+    
+    // MARK: - Outlets
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemOrange
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    private lazy var iconView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = .white
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        return label
+    }()
+    
+    // MARK: - Initialization
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupHierarchy()
+        setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setup
+    
+    private func setupHierarchy() {
+        addSubview(containerView)
+        addSubview(label)
+        
+        containerView.addSubview(iconView)
+    }
+    
+    private func setupLayout() {
+        containerView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(10)
+            make.height.width.equalTo(30)
+        }
+        
+        iconView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.width.equalTo(20)
+        }
+        
+        label.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalTo(iconView.snp.right).offset(20)
+        }
+    }
+    
+    // MARK: - Reuse
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.accessoryType = .none
+        self.accessoryView = .none
+        self.setting = nil
+    }
+}
