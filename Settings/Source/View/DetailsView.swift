@@ -1,44 +1,49 @@
 import UIKit
 import SnapKit
 
-final class DetailViewController: UIViewController {
+final class DetailsView: UIView {
 
-    // MARK: - Properties
-    
-    var setting: Setting?
-    
     // MARK: - Outlets
     
     private lazy var iconView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private lazy var label: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // MARK: - Lifecycle
+    // MARK: - Initialization
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        setupFill()
-        setupHierarchy()
-        setupLayout()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Setup
     
+    private func setup() {
+        setupView()
+        setupHierarchy()
+        setupLayout()
+    }
+    
+    private func setupView() {
+        backgroundColor = .systemBackground
+    }
+    
     private func setupHierarchy() {
-        view.addSubview(iconView)
-        view.addSubview(label)
+        addSubview(iconView)
+        addSubview(label)
     }
     
     private func setupLayout() {
@@ -53,10 +58,12 @@ final class DetailViewController: UIViewController {
         }
     }
     
-    private func setupFill() {
-        iconView.image = setting?.iconImage
-        iconView.tintColor = setting?.tintColor
-        iconView.backgroundColor = setting?.backgroundColor
-        label.text = setting?.text
+    // MARK: - Configuration
+    
+    func configure(with setting: Setting) {
+        iconView.image = setting.iconImage
+        iconView.tintColor = setting.tintColor
+        iconView.backgroundColor = setting.backgroundColor
+        label.text = setting.text
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-final class CustomTableViewCell: UITableViewCell {
+final class SettingsTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
@@ -20,7 +20,6 @@ final class CustomTableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .systemOrange
         view.layer.cornerRadius = 5
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -28,20 +27,16 @@ final class CustomTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.tintColor = .white
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "airplane")
         return imageView
     }()
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "just a text to check"
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // MARK: - Initializers
+    // MARK: - Initialization
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -56,8 +51,8 @@ final class CustomTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-        contentView.addSubview(containerView)
-        contentView.addSubview(label)
+        addSubview(containerView)
+        addSubview(label)
         
         containerView.addSubview(iconView)
     }
