@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     // MARK: - Properties
     
