@@ -66,7 +66,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         switch accessory {
             case .chevron:
                 cell.accessoryType = .disclosureIndicator
-            case .uiswitch:
+            case .switcher:
                 cell.accessoryView = UISwitch()
             default:
                 cell.accessoryType = .none
