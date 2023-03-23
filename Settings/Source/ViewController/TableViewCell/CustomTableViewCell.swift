@@ -4,6 +4,7 @@ import SnapKit
 final class CustomTableViewCell: UITableViewCell {
     
     // MARK: - Properties
+    
     var setting: Setting? {
         didSet {
             iconView.image = setting?.iconImage
@@ -14,6 +15,7 @@ final class CustomTableViewCell: UITableViewCell {
     }
     
     // MARK: - Outlets
+    
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemOrange
